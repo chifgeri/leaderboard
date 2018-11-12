@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import LeaderBoard from './leaderboard.js'
-import Background from './logo_kszk.png'
+import Background from './background.jpg'
 
 class App extends Component {
   render() {
     return (
-      <div style={{ backgroundImage: `url(${Background})`}}>
-      <LeaderBoard />
+      <div style={{ height:'100%', backgroundImage: `url(${Background})`, backgroundAttachment: 'fixed', padding: 0, margin: 0}} >
+        <LeaderBoard />
       </div>
     );
   }

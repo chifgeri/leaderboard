@@ -1,10 +1,11 @@
 import React from 'react'
-import { Header, Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 
 const MainBoard = ({groups}) => (
-  <Table celled inverted>
+  <Table celled inverted style={{width: '300px'}}>
     <Table.Header>
       <Table.Row>
+      < Table.HeaderCell>Név</Table.HeaderCell>
         <Table.HeaderCell>Tankör</Table.HeaderCell>
         <Table.HeaderCell>Pont</Table.HeaderCell>
       </Table.Row>
@@ -13,10 +14,9 @@ const MainBoard = ({groups}) => (
       {groups.map((group, id)=>{
         return(
         <Table.Row>
-        <Table.Cell>
-            {group.name}
-        </Table.Cell>
-        <Table.Cell>{group.point}</Table.Cell>
+        <Table.Cell>{group.name}</Table.Cell>
+        <Table.Cell>{group.team_id}</Table.Cell>
+        <Table.Cell>{group.score}</Table.Cell>
       </Table.Row>)})
     }
     </Table.Body>

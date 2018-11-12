@@ -3,6 +3,7 @@ import { Grid } from 'semantic-ui-react'
 import MainBoard from './mainboard.js'
 import FilteredBoard from './filteredboard.js'
 
+const axios = require('axios');
 
 export default class LeaderBoard extends React.Component{
 
@@ -10,12 +11,18 @@ export default class LeaderBoard extends React.Component{
     super(props);
     this.state =
       {
-        groups: [{ name: 'I34', point : 33 },   { name: 'V14', point : 53 }]
+        groups: [{ name: 'I34', score : 33, color: 'FEKETE' },   { name: 'V14', score : 53, color: 'FEKETE' }]
       };
   }
 
   componentDidMount(){
-
+    axios.get('/api/v1/teams')
+    .then((response) =>(
+      this.setState({
+            groups: response.data
+            })
+          )
+         );
    }
 
   render(){
@@ -25,7 +32,7 @@ export default class LeaderBoard extends React.Component{
       <Grid.Column>
         <MainBoard groups = {this.state.groups}/>
       </Grid.Column>
-      <Grid.Column style={{textAlign: 'right'}}>
+      <Grid.Column floated='right'>
         <FilteredBoard groups = {this.state.groups}/>
       </Grid.Column>
     </Grid.Row>
