@@ -1,5 +1,5 @@
 import React from 'react'
-import { Responsive, Segment, Table, Grid } from 'semantic-ui-react'
+import { Responsive, Table, Grid } from 'semantic-ui-react'
 
 const FilteredBoard = ({groups}) => {
   let colors = {}
@@ -9,6 +9,7 @@ const FilteredBoard = ({groups}) => {
     else {
       colors[group.color] = group.score;
     }
+    return group
   })
   return(
     <Responsive as={Grid} minWidth={700}>
