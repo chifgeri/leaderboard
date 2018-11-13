@@ -6,7 +6,9 @@ import Background from './background.jpg'
 class App extends Component {
   render() {
     return (
-      <div style={{ height:'100%', backgroundImage: `url(${Background})`, backgroundAttachment: 'fixed', padding: 0, margin: 0}} >
+      <div style={{ height:'100%', backgroundImage: `url(${Background})`,
+                    backgroundAttachment: 'fixed',backgroundSize: "cover",
+                    overflow:'auto', padding: 0, margin: 0}} >
         <LeaderBoard />
       </div>
     );

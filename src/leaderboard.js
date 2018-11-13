@@ -11,7 +11,7 @@ export default class LeaderBoard extends React.Component{
     super(props);
     this.state =
       {
-        groups: [{ name: 'I34', score : 33, color: 'FEKETE' },   { name: 'V14', score : 53, color: 'FEKETE' }]
+        groups: []
       };
   }
 
